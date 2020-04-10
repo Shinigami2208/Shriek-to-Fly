@@ -24,6 +24,7 @@ var game = function(){
         this.canvas.height = this.height;
         this.canvas.x = 0;
         this.canvas.y = 0;
+        this.canvas.setAttribute("id", "gameID")
         document.body.appendChild(this.canvas);
         // create bird
         this.bird = new bird(this);
@@ -42,8 +43,8 @@ var game = function(){
         this.pipe.init();
 
         // create gameOverBg
-        this.gameOverBg = new gameOverBg(this);
-        this.gameOverBg.init();
+        // this.gameOverBg = new gameOverBg(this);
+        // this.gameOverBg.init();
 
         // create playAgain
         this.playAgain = new playAgain(this);
@@ -83,6 +84,7 @@ var game = function(){
         this.base.update();
         this.pipe.update();
         if(this.gameOver == true){
+            this.gameOver == false;
             this.playAgain.update();
         }
     }
@@ -93,11 +95,15 @@ var game = function(){
         this.base.draw();
         this.bird.draw();
         if(self.gameOver == true){
-            self.gameOverBg.draw();
+            // self.gameOverBg.draw();
             self.playAgain.draw();
         }
         
     }
+    // this.destroyGame = function(){
+    //     var child = document.getElementById("gameID");
+    //     document.body.removeChild(child);
+    // }
 }
 
 var g = new game();

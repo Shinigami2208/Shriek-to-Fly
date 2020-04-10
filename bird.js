@@ -85,7 +85,7 @@ var bird = function(game){
     }
 
     this.flap = function(){
-        if(this.game.gameOver){
+        if(this.game.gameOver == true){
             return;
         }
         this.speedY = -8;

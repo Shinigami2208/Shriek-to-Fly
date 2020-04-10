@@ -25,7 +25,7 @@ var playAgain = function(game){
 
     this.update = function(){
         if(this.game.sound.volume > 90){
-            this.game.init();
+            window.location.reload (true);
         }
     }
 
@@ -39,6 +39,6 @@ var playAgain = function(game){
         if(this.loaded == false){
             return;
         }
-        self.game.context.drawImage(self.image, 84, 300);
+        self.game.context.drawImage(self.image, 0, 150);
     }
 }
